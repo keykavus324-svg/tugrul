@@ -1,0 +1,6 @@
+{
+  "name": "Prof. Dr. Tuğrul - Matematik AI",
+  "description": "Matematik problemlerini çözen, akademik düzeyde açıklamalar yapan gelişmiş bir yapay zeka matematik asistanı.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": []
+}
