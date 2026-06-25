@@ -1,0 +1,67 @@
+{
+  "name": "codetutor-ai-desktop",
+  "version": "2.0.0",
+  "description": "CodeTutor AI - Dünyanın en gelişmiş lokal kodlama eğitmeni (Desktop Uygulaması)",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "electron:build": "npm run build && electron-builder",
+    "electron:start": "electron ."
+  },
+  "keywords": [
+    "code-tutor",
+    "ai-mentor",
+    "socratic-learning",
+    "ollama",
+    "desktop-app"
+  ],
+  "author": "CodeTutor AI Team",
+  "license": "MIT",
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "axios": "^1.6.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.8",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.codetutor.ai",
+    "productName": "CodeTutor AI",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "electron/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "electron/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "electron/icon.png"
+    }
+  }
+}
