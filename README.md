@@ -1,77 +1,82 @@
-# CodeTutor AI 🎓
+# CodeTutor AI 🎓💻
 
-Yerel olarak çalışan, öğrencilere Sokratik yöntemle kod yazmayı öğreten yapay zeka destekli web uygulaması.
+Yerel makinenizde çalışan, Sokratik yöntemle kodlama öğreten akıllı asistan. Harici API'lere ihtiyaç duymaz, tamamen sizin kontrolünüzde çalışır.
 
-## Özellikler
+## 🚀 Özellikler
 
-- **Öğretici Mod**: Sokratik yöntemle sorular sorarak öğretir, doğrudan cevap vermez.
-- **Çözüm Modu**: En iyi ve optimize kodu yazar, detaylı açıklar.
-- **Lokal Çalışma**: Ollama ile qwen2.5-coder:7b modeli kullanır, internet gerekmez (model indirme hariç).
-- **Modern Arayüz**: Monaco Editor + Tailwind CSS + React.
+- **🧠 Sokratik Öğretim Modu:** Size balık vermek yerine balık tutmayı öğretir. Hataları doğrudan düzeltmez, sizi düşündürerek doğru çözüme ulaşmanızı sağlar.
+- **⚡ Hızlı Çözüm Modu:** Takıldığınız yerde en temiz, optimize ve modern kodu anında üretir.
+- **🔒 %100 Gizlilik & Lokal:** Kodlarınız hiçbir sunucuya gönderilmez. Tüm işlemler kendi bilgisayarınızda (localhost) gerçekleşir.
+- **🎨 Modern Arayüz:** Sol tarafta gelişmiş kod editörü (Monaco), sağ tarafta akıcı sohbet deneyimi.
+- **🌐 Çoklu Dil Desteği:** Python başta olmak üzere birçok programlama dilinde uzmanlaşmış altyapı.
 
-## Kurulum
+## 🛠️ Teknolojiler
 
-### Gereksinimler
-1. Python 3.8+ ([İndir](https://www.python.org/downloads/))
-2. Node.js 16+ ([İndir](https://nodejs.org/))
-3. Ollama ([İndir](https://ollama.com/download))
+- **Frontend:** React, Vite, Tailwind CSS, Monaco Editor
+- **Backend:** FastAPI, Python, Uvicorn
+- **AI Engine:** Ollama (qwen2.5-coder:7b)
 
-### Otomatik Kurulum (Windows)
-1. `BASLAT.bat` dosyasına çift tıklayın.
-2. Script otomatik olarak:
-   - Gerekli modelleri indirir
-   - Python ve Node.js bağımlılıklarını yükler
-   - Uygulamayı başlatır
+## 📦 Kurulum
 
-### Manuel Kurulum
+Sistemin çalışması için bilgisayarınızda **Python**, **Node.js** ve **Ollama**'nın kurulu olması gerekir.
 
-#### Backend
+### 1. Ollama Kurulumu ve Model İndirme
+
+Öncelikle [Ollama](https://ollama.com)'yı indirin ve kurun. Ardından terminali açıp gerekli modeli çekin:
+
+```bash
+ollama pull qwen2.5-coder:7b
+```
+
+### 2. Projeyi Başlatma
+
+Proje klasöründe aşağıdaki komutu çalıştırarak tüm bağımlılıkları otomatik kurabilir ve uygulamayı başlatabilirsiniz.
+
+**Windows Kullanıcıları:**
+```cmd
+BASLAT.bat
+```
+
+**Linux / Mac Kullanıcıları:**
+```bash
+chmod +x baslat.sh
+./baslat.sh
+```
+
+> **Not:** İlk çalıştırmada paketlerin indirilmesi birkaç dakika sürebilir.
+
+## 💡 Nasıl Kullanılır?
+
+1.  Uygulama açıldığında sol taraftaki editöre kodunuzu yazın.
+2.  Sağ üstteki butondan mod seçin:
+    *   **📘 Öğretici Mod:** "Kodumda ne yanlış?", "Bunu nasıl daha iyi yazarım?" gibi sorular sorun. Size ipucu verecektir.
+    *   **💻 Çözüm Modu:** "Bunu en hızlı şekilde nasıl yazarım?" deyin, size en iyi kodu yazsın.
+3.  Sohbet penceresinden sorularınızı iletin ve anında yanıt alın.
+
+## ⚙️ Manuel Kurulum (İsteğe Bağlı)
+
+Eğer otomatik scriptleri kullanmak istemezseniz:
+
+**Backend:**
 ```bash
 cd backend
 python -m venv venv
-# Windows
-venv\Scripts\activate
-# Linux/Mac
-source venv/bin/activate
+# Windows: venv\Scripts\activate
+# Linux/Mac: source venv/bin/activate
 pip install -r requirements.txt
 python main.py
 ```
 
-#### Frontend
+**Frontend:**
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-## Kullanım
+## 🤝 Katkıda Bulunma
 
-1. Tarayıcıda http://localhost:5173 adresine gidin.
-2. Sol tarafta kodunuzu yazın.
-3. Sağ üstten mod seçin:
-   - **Öğretici Mod**: Sorularla öğrenin
-   - **Çözüm Modu**: Direkt kod alın
-4. Sorunuzu yazıp gönderin.
+Projeyi geliştirmek veya hataları bildirmek için Pull Request gönderebilirsiniz.
 
-## Proje Yapısı
-
-```
-/workspace/
-├── backend/
-│   ├── main.py              # FastAPI uygulaması
-│   └── requirements.txt     # Python bağımlılıkları
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx          # Ana React bileşeni
-│   │   ├── main.jsx         # Entry point
-│   │   └── index.css        # Stiller
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── tailwind.config.js
-│   └── postcss.config.js
-├── BASLAT.bat               # Otomatik başlatıcı (Windows)
-└── README.md
-```
-
-## Lisans
-MIT
+---
+*CodeTutor AI - Kodlamayı öğrenmenin en akıllı yolu.*
