@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Chat Bubble Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.chat-message-ai {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.chat-message-user {
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Loading Dots Animation */
+@keyframes dotFlashing {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loading-dot:nth-child(1) {
+  animation: dotFlashing 1s infinite 0s;
+}
+
+.loading-dot:nth-child(2) {
+  animation: dotFlashing 1s infinite 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+  animation: dotFlashing 1s infinite 0.4s;
+}
+
+/* Markdown Styles */
+.markdown-content {
+  line-height: 1.7;
+}
+
+.markdown-content p {
+  margin-bottom: 1rem;
+}
+
+.markdown-content strong {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.markdown-content em {
+  color: #fbbf24;
+  font-style: italic;
+}
+
+.markdown-content ul, .markdown-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Glass morphism effect */
+.glass-effect {
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Confidence indicator colors */
+.confidence-very-high {
+  color: #22c55e;
+}
+
+.confidence-high {
+  color: #84cc16;
+}
+
+.confidence-medium {
+  color: #fbbf24;
+}
+
+.confidence-low {
+  color: #ef4444;
+}
