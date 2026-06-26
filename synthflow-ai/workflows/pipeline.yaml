@@ -1,0 +1,85 @@
+# SynthFlow Pipeline Definition
+# This file defines the data generation pipeline for Prefect/Airflow
+
+pipeline:
+  name: "synthflow-pipeline"
+  version: "1.0.0"
+  description: "End-to-end synthetic data generation with privacy preservation"
+
+stages:
+  - name: "data_ingestion"
+    type: "extract"
+    config:
+      source: "data/raw_data.csv"
+      validation: true
+    
+  - name: "data_preprocessing"
+    type: "transform"
+    config:
+      handle_missing: "impute"
+      normalize: true
+      encode_categoricals: true
+      
+  - name: "privacy_analysis"
+    type: "analyze"
+    config:
+      detect_pii: true
+      sensitivity_classification: true
+      
+  - name: "synthetic_generation"
+    type: "generate"
+    config:
+      method: "ctgan"
+      n_samples: 10000
+      random_state: 42
+      
+  - name: "privacy_application"
+    type: "transform"
+    config:
+      differential_privacy: true
+      epsilon: 1.0
+      mechanism: "laplace"
+      
+  - name: "quality_evaluation"
+    type: "evaluate"
+    config:
+      metrics:
+        - statistical_distance
+        - correlation_similarity
+        - ml_efficacy
+      threshold:
+        wasserstein_distance: 0.5
+        ml_accuracy_drop: 0.1
+        
+  - name: "export"
+    type: "load"
+    config:
+      output_format: ["csv", "parquet"]
+      destination: "output/synthetic_data"
+      include_report: true
+
+dependencies:
+  - stage: "data_preprocessing"
+    requires: ["data_ingestion"]
+  - stage: "privacy_analysis"
+    requires: ["data_preprocessing"]
+  - stage: "synthetic_generation"
+    requires: ["privacy_analysis"]
+  - stage: "privacy_application"
+    requires: ["synthetic_generation"]
+  - stage: "quality_evaluation"
+    requires: ["privacy_application"]
+  - stage: "export"
+    requires: ["quality_evaluation"]
+
+monitoring:
+  alerts:
+    - type: "quality_threshold_breach"
+      action: "notify"
+    - type: "privacy_budget_exhausted"
+      action: "halt"
+  
+  logging:
+    level: "INFO"
+    format: "json"
+    destination: "logs/pipeline.log"

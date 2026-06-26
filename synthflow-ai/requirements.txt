@@ -1,0 +1,47 @@
+# Core dependencies
+numpy>=1.21.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+scipy>=1.7.0
+
+# Deep learning for data generation
+torch>=1.9.0
+tensorflow>=2.6.0
+
+# Synthetic data libraries
+sdv>=0.17.0
+ctgan>=0.5.0
+
+# Privacy engineering
+diffprivlib>=0.1.0
+smartnoise-sdk>=0.1.0
+
+# NLP for text generation and PII detection
+transformers>=4.10.0
+spacy>=3.1.0
+
+# Pipeline orchestration
+prefect>=2.0.0
+apache-airflow>=2.3.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+plotly>=5.3.0
+
+# Testing
+pytest>=6.2.0
+pytest-cov>=3.0.0
+
+# Code quality
+black>=21.0.0
+flake8>=4.0.0
+mypy>=0.910
+
+# Utilities
+tqdm>=4.62.0
+pyyaml>=5.4.0
+python-dotenv>=0.19.0
+
+# Docker support
+docker>=5.0.0
