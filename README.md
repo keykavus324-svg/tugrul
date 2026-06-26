@@ -144,8 +144,8 @@ Bu proje **MIT Lisansı** altında lisanslanmıştır. Detaylar için [LICENSE](
 - Linux çekirdek geliştiricilerine ilham kaynağı oldukları için.
 
 ---
-**Geliştirici:** [Adınız Soyadınız]
-**İletişim:** [E-posta Adresiniz]
+**Geliştirici:** Muhammet TUĞRUL
+**İletişim:** keykavus324@gmail.com
 **Web Sitesi:** [Websiteniz]
 
 *Not: Bu proje eğitim amaçlıdır. Üretim ortamında kullanılmamalıdır.*
